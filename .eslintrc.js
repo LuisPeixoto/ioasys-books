@@ -6,7 +6,9 @@ module.exports = {
     "extends": [
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
-        "airbnb"
+        "airbnb",
+        "plugin:prettier/recommended",
+        "prettier"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -23,13 +25,16 @@ module.exports = {
     "plugins": [
         "react",
         "react-hooks",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
         "prettier/prettier": "error",
         "react/jsx-one-expression-per-line": "off",
         "@typescript-eslint/camelcase": "off",
         "import/no-duplicates": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
         "react/jsx-props-no-spreading": "off",
         "react/prop-types": "off",
         "react-hooks/rules-of-hooks": "error",

@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header';
-import Input from '../../components/Input';
+import Input from '../../components/Input/Login';
 import { Container, Form, Fields } from './styles';
 
 const Login: React.FC = () => {

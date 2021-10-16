@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextInputProps } from 'react-native';
-import Button from '../Button';
+import Button from '../../Button';
 import { Container, Label, TextInput, Field } from './styles';
 
 interface Props extends TextInputProps {

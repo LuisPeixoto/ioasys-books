@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../../components/Header';
-import Input from '../../components/Input/Login';
+import Header from '../../components/Logo';
+import InputLogin from '../../components/Input/InputLogin';
 import { Container, Form, Fields } from './styles';
 
 const Login: React.FC = () => {
@@ -9,7 +9,7 @@ const Login: React.FC = () => {
       <Form>
         <Header type="light" />
         <Fields>
-          <Input
+          <InputLogin
             label="Email"
             name="email"
             autoCorrect={false}
@@ -20,7 +20,7 @@ const Login: React.FC = () => {
             returnKeyType="next"
           />
 
-          <Input
+          <InputLogin
             label="Senha"
             name="password"
             secureTextEntry

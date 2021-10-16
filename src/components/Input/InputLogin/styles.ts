@@ -28,5 +28,5 @@ export const TextInput = styled(Input).attrs({
 `;
 
 export const Field = styled.View`
-  width: 60%;
+  flex: 1;
 `;

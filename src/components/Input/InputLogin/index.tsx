@@ -8,7 +8,7 @@ interface Props extends TextInputProps {
   onPressButton?: () => void;
 }
 
-const Input: React.FC<Props> = ({ onPressButton, label, ...rest }) => {
+const InputLogin: React.FC<Props> = ({ onPressButton, label, ...rest }) => {
   return (
     <Container>
       <Field>
@@ -21,4 +21,4 @@ const Input: React.FC<Props> = ({ onPressButton, label, ...rest }) => {
   );
 };
 
-export default Input;
+export default InputLogin;

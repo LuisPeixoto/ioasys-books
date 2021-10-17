@@ -1,16 +1,18 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
+
 import { ThemeProvider } from 'styled-components';
+import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'react-native';
 import theme from './Global/theme';
-import Details from './screens/Details';
-import Home from './screens/Home';
-// import Home from './screens/Home';
+import AuThRoutes from './routes/auth.routes';
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar translucent backgroundColor="transparent" />
-      <Details />
+      <NavigationContainer>
+        <AuThRoutes />
+      </NavigationContainer>
     </ThemeProvider>
   );
 };

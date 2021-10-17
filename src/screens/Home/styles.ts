@@ -41,3 +41,7 @@ export const Search = styled.View`
   padding: 0 ${RFValue(16)}px;
   margin-bottom: ${RFValue(16)}px;
 `;
+
+export const ContainerFilter = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.8,
+})``;

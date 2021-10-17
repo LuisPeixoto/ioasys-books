@@ -10,7 +10,7 @@ export const Container = styled.View.attrs({
   shadowOpacity: 0.8,
   shadowRadius: 5.65,
 
-  elevation: 6,
+  elevation: 10,
 })`
   width: 100%;
   flex-direction: row;
@@ -34,8 +34,10 @@ export const ContainerImageBook = styled.View.attrs({
   shadowOpacity: 0.5,
   shadowRadius: 4.65,
 
-  elevation: 6,
-})``;
+  elevation: 10,
+})`
+  background-color: #fff;
+`;
 
 export const ImageBook = styled.Image`
   width: 100%;

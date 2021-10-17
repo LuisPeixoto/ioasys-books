@@ -4,12 +4,13 @@ import { Container, Title } from './styles';
 
 interface Props extends TouchableOpacityProps {
   title: string;
+  hasBorder?: boolean;
 }
 
-const Button: React.FC<Props> = ({ title, ...rest }: Props) => {
+const Button: React.FC<Props> = ({ title, hasBorder, ...rest }: Props) => {
   return (
-    <Container {...rest}>
-      <Title>{title}</Title>
+    <Container hasBorder={hasBorder} {...rest}>
+      <Title hasBorder>{title}</Title>
     </Container>
   );
 };

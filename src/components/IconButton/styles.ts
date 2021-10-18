@@ -3,7 +3,9 @@ import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export const Container = styled(TouchableOpacity)`
+export const Container = styled(TouchableOpacity).attrs({
+  activeOpacity: 0.4,
+})`
   width: ${RFValue(32)}px;
   height: ${RFValue(32)}px;
   border: ${RFValue(1)}px solid rgba(51, 51, 51, 0.2);

@@ -14,7 +14,7 @@ export const Fields = styled.View`
   margin-top: ${RFValue(48)}px;
 `;
 
-export const Form = styled.View`
+export const Content = styled.View`
   width: 100%;
   padding: ${RFValue(16)}px;
 `;

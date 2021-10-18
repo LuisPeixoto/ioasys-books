@@ -44,18 +44,18 @@ export const AuthProvider: React.FunctionComponent = ({ children }) => {
         api.defaults.headers.authorization = `Bearer ${token[1]}`;
         setData({ token: token[1], user: JSON.parse(user[1]) });
       }
-
       setLoading(false);
     }
     loadStorageData();
   }, []);
   const signIn = useCallback(async ({ email, password }) => {
-    const response = await api.post('auth/login', {
+    const response = await api.post('/auth/sign-in', {
       email,
       password,
     });
 
-    const { token, user } = response.data;
+    const user = response.data;
+    const token = response.headers.authorization;
 
     await AsyncStorage.setItem('@IoasysBooks:token', token);
     await AsyncStorage.setItem('@IoasysBooks:user', JSON.stringify(user));

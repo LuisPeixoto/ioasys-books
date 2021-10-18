@@ -6,7 +6,9 @@ interface Props {
   hasBorder?: boolean;
 }
 
-export const Container = styled(TouchableOpacity)<Props>`
+export const Container = styled(TouchableOpacity).attrs({
+  activeOpacity: 0.6,
+})<Props>`
   margin: ${RFValue(12)}px ${RFValue(16)}px;
   ${({ hasBorder }) =>
     !!hasBorder &&
@@ -23,6 +25,6 @@ export const Container = styled(TouchableOpacity)<Props>`
 export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.medium};
   font-size: ${RFValue(16)}px;
-  padding: ${RFValue(8)}px ${RFValue(24)}px;
+  padding: ${RFValue(8)}px ${RFValue(21)}px;
   color: ${({ theme }) => theme.colors.pink};
 `;

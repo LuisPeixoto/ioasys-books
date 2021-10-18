@@ -27,7 +27,7 @@ Para o desenvolvimento do aplicativo foram utilizadas as seguintes bibliotecas:
   
 ## APK do aplicativo
 
-Link do apk do aplicativo: [ioasys-book.apk](https://github.com/LuisPeixoto/ioasys-book/releases/download/ioasys-book/ioasys-book.apk)
+Link do apk do aplicativo: [ioasys-book.apk](https://github.com/LuisPeixoto/ioasys-books/releases/tag/ioasysbooks.apk)
 
 
 ## Instalação

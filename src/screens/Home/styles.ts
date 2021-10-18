@@ -1,7 +1,7 @@
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Platform } from 'react-native';
+import { FlatList, Platform } from 'react-native';
 import background from '../../assets/background_home.png';
 
 export const Container = styled.ImageBackground.attrs({
@@ -9,6 +9,8 @@ export const Container = styled.ImageBackground.attrs({
   resizeMode: 'cover',
 })`
   flex: 1;
+  padding-top: ${RFValue(20)}px;
+  padding-bottom: 80px;
 `;
 
 export const Content = styled.View`
@@ -39,9 +41,18 @@ export const Search = styled.View`
   flex-direction: row;
   align-items: center;
   padding: 0 ${RFValue(16)}px;
+
   margin-bottom: ${RFValue(16)}px;
 `;
 
+export const Books = styled(FlatList).attrs({})`
+  padding: 0 16px;
+`;
+
 export const ContainerFilter = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.8,
+})``;
+
+export const Book = styled.TouchableOpacity.attrs({
   activeOpacity: 0.8,
 })``;

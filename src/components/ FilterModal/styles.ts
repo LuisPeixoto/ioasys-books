@@ -38,7 +38,9 @@ export const OptionsContainer = styled.View`
   flex-wrap: wrap;
   flex-direction: row;
 `;
-export const Option = styled.TouchableOpacity<Props>`
+export const Option = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.8,
+})<Props>`
   padding: ${RFValue(6)}px ${RFValue(16)}px;
   border: ${RFValue(1)}px solid rgba(51, 51, 51, 0.3);
   border-radius: ${RFValue(44)}px;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Modal, StatusBar } from 'react-native';
 import Button from '../Button';
-import IconButton from '../Button/IconButton';
-import { categories, years } from './data';
+import IconButton from '../IconButton';
+import { categories, years } from './itemsFilter';
 import {
   Container,
   Content,
@@ -16,7 +16,7 @@ import {
 
 interface Filter {
     category:object,
-    year: object,
+    published: object,
 }
 
 interface Props {
@@ -67,11 +67,9 @@ const FilterModal: React.FC<Props> = ({ addFilters, show, closeModal }) => {
   function handleFilter(): void {
     const filters = {
       category: selectedCategory,
-      year: selectedYear,
+      published: selectedYear,
     }
     addFilters(filters);
-    // setSelectedCategory([])
-    // setSelectedYear([])
     closeModal()
   }
 
@@ -87,6 +85,7 @@ const FilterModal: React.FC<Props> = ({ addFilters, show, closeModal }) => {
           <OptionsContainer>
             {categories.map(categorie => (
               <Option
+              key={categorie.id}
               isActive={isActiveFilterCategory(categorie.id)}
               onPress={() =>
                 isActiveFilterCategory(categorie.id)
@@ -94,7 +93,7 @@ const FilterModal: React.FC<Props> = ({ addFilters, show, closeModal }) => {
                   : handleAddNewCategory(categorie.id)
               }
             >
-              <OptionText isActive={isActiveFilterCategory(categorie.id)}>
+              <OptionText   isActive={isActiveFilterCategory(categorie.id)}>
                 {categorie.value}
               </OptionText>
             </Option>
@@ -106,6 +105,7 @@ const FilterModal: React.FC<Props> = ({ addFilters, show, closeModal }) => {
           <OptionsContainer>
             {years.map(year => (
               <Option
+              key={year}
               isActive={isActiveFilterYear(year)}
               onPress={() =>
                 isActiveFilterYear(year)
@@ -113,7 +113,7 @@ const FilterModal: React.FC<Props> = ({ addFilters, show, closeModal }) => {
                   : handleAddNewYear(year)
               }
             >
-              <OptionText isActive={isActiveFilterYear(year)}>
+              <OptionText  isActive={isActiveFilterYear(year)}>
                 {year}
               </OptionText>
             </Option>

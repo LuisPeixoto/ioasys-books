@@ -10,7 +10,7 @@ export const categories = [
   { id: 'games', value: 'Jogos' },
   { id: 'newspapers', value: 'Jornais' },
   { id: 'brazilian-literature', value: 'Literatura Brasileira' },
-  { id: 'manuscripts', value: 'manuscripts' },
+  { id: 'manuscripts', value: 'Manuscritos' },
   { id: 'poetry', value: 'Poesia' },
 ];
 

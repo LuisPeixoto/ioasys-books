@@ -1,11 +1,11 @@
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Octicons from 'react-native-vector-icons/Octicons';
 
 export const Container = styled.ScrollView`
   width: 100%;
   padding: 0 ${RFValue(16)}px;
-  margin-top: 60px; /////////////dasddadadaddd
+  padding-top: ${RFValue(60)}px;
 
   background-color: ${({ theme }) => theme.colors.light};
 `;
@@ -80,7 +80,7 @@ export const DescriptionTextRight = styled.Text`
 
 export const Review = styled.View`
   margin-top: ${RFValue(10)}px;
-  margin-bottom: ${RFValue(44)}px;
+  padding-bottom: ${RFValue(80)}px;
 `;
 export const ReviewText = styled.Text`
   font-size: ${RFValue(12)}px;
@@ -89,8 +89,8 @@ export const ReviewText = styled.Text`
   font-family: ${props => props.theme.fonts.regular};
 `;
 
-export const Icon = styled(Ionicons).attrs({
-  size: RFValue(24),
+export const Icon = styled(Octicons).attrs({
+  size: RFValue(20),
 })`
   color: ${props => props.theme.colors.gray};
   line-height: ${RFValue(20)}px;

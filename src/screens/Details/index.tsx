@@ -1,6 +1,7 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import { StatusBar } from 'react-native';
-import IconButton from '../../components/Button/IconButton';
+import IconButton from '../../components/IconButton';
 import {
   Container,
   ContainerImageBook,
@@ -17,40 +18,74 @@ import {
   ReviewText,
 } from './styles';
 
-const Details: React.FC = () => {
-  const data = {
-    id: '8f41b92c7460b9337660427e',
-    title: 'A Culpa é das Estrelas',
-    description:
-      'Hazel foi diagnosticada com câncer aos treze anos e agora, aos dezesseis, sobrevive graças a uma droga revolucionária que detém a metástase em seus pulmões. Ela sabe que sua doença é terminal e passa os dias vendo tevê e lendo Uma aflição imperial, livro cujo autor deixou muitas perguntas sem resposta. ',
-    authors: ['Jonh Green', 'Jonh Green', 'Jonh Green'],
-
-    informations: [
-      { title: 'Páginas', value: 288 },
-      { title: 'Editora', value: 'Intrínseca' },
-      { title: 'Publicação', value: 2002 },
-      { title: 'Idioma', value: 'Inglês' },
-      { title: 'Título Original', value: 'A Culpa é das Estrelas' },
-      { title: 'ISBN-10', value: '0062856626' },
-      { title: 'ISBN-13', value: '978-0062856623' },
-      { title: 'Categoria', value: 'Romance' },
-    ],
-    imageUrl: 'https://files-books.ioasys.com.br/Book-0.jpg',
+interface RouteProps {
+  route: {
+    params: {
+      book: {
+        id: string;
+        title: string;
+        description: string;
+        authors: object;
+        pageCount: string;
+        category: string;
+        imageUrl: string;
+        isbn10: string;
+        isbn13: string;
+        language: string;
+        publisher: string;
+        published: string;
+      };
+    };
   };
-  const authors = data.authors.toString().split(',').join(', ');
+}
+
+const Details: React.FC<RouteProps> = ({ route }) => {
+  const { book } = route.params;
+  const navigation = useNavigation();
+
+  const {
+    title,
+    description,
+    authors,
+    imageUrl,
+    pageCount,
+    publisher,
+    published,
+    language,
+    isbn10,
+    isbn13,
+    category,
+  } = book;
+
+  const data = {
+    informations: [
+      { title: 'Páginas', value: pageCount },
+      { title: 'Editora', value: publisher },
+      { title: 'Publicação', value: published },
+      { title: 'Idioma', value: language },
+      { title: 'Título Original', value: title },
+      { title: 'ISBN-10', value: isbn10 },
+      { title: 'ISBN-13', value: isbn13 },
+      { title: 'Categoria', value: category },
+    ],
+  };
+  const formatedAuthors = authors.toString().split(',').join(', ');
 
   return (
     <Container>
       <StatusBar barStyle="dark-content" />
-      <IconButton IconName="arrow-back-outline" />
+      <IconButton
+        IconName="arrow-back-outline"
+        onPress={() => navigation.goBack()}
+      />
 
       <ContainerImageBook>
-        <ImageBook source={{ uri: data.imageUrl }} />
+        <ImageBook source={{ uri: imageUrl }} />
       </ContainerImageBook>
 
       <Content>
-        <Title numberOfLines={2}>{data.title}</Title>
-        <Authors>{authors}</Authors>
+        <Title numberOfLines={2}>{title}</Title>
+        <Authors>{formatedAuthors}</Authors>
 
         <SectionTitle>Informações</SectionTitle>
         {data.informations.map(information => (
@@ -63,7 +98,7 @@ const Details: React.FC = () => {
         <SectionTitle>Resenha da editora</SectionTitle>
         <Review>
           <ReviewText>
-            <Icon name="quote" /> {data.description}
+            <Icon name="quote" /> {description}
           </ReviewText>
         </Review>
       </Content>

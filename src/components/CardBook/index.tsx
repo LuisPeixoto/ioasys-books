@@ -15,10 +15,16 @@ import {
 
 interface Props {
   data: {
+    id: string;
     title: string;
-    authors: string[];
+    description: string;
+    authors: object;
     pageCount: number;
+    category: string;
     imageUrl: string;
+    isbn10: string;
+    isbn13: string;
+    language: string;
     publisher: string;
     published: number;
   };
@@ -38,7 +44,7 @@ const CardBook: React.FC<Props> = ({ data }) => {
         <Header>
           <Title>{data.title}</Title>
           {authors.map((author, index) => (
-            <Authors>
+            <Authors key={index}>
               {author}
               {index + 1 < authors.length && ','}
             </Authors>

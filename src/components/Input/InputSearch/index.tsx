@@ -1,14 +1,17 @@
 import React from 'react';
-import { TextInputProps } from 'react-native';
-import { Container, TextInput, Icon } from './styles';
+import { Container, TextInput, Icon, ContentIcon } from './styles';
 
-type Props = TextInputProps;
+interface Props extends TextInputProps {
+  onPress: () => void;
+}
 
-const InputSearch: React.FC<Props> = ({ ...rest }) => {
+const InputSearch: React.FC<Props> = ({ onPress, ...rest }) => {
   return (
     <Container>
       <TextInput {...rest} />
-      <Icon name="search-outline" />
+      <ContentIcon onPress={onPress}>
+        <Icon name="search-outline" />
+      </ContentIcon>
     </Container>
   );
 };

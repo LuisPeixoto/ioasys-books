@@ -1,4 +1,4 @@
-import { TextInput as Input } from 'react-native';
+import { TextInput as Input, TouchableOpacity } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -23,6 +23,10 @@ export const TextInput = styled(Input).attrs({
   margin-left: ${RFValue(11)}px;
   font-family: ${props => props.theme.fonts.medium};
 `;
+
+export const ContentIcon = styled(TouchableOpacity).attrs({
+  activeOpacity: 0.8,
+})``;
 
 export const Icon = styled(Ionicons).attrs({
   size: RFValue(24),
